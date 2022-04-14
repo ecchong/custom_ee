@@ -15,8 +15,8 @@ The `disconnected_ee` directory contains necessary build files for disconnected 
 
 **Noted** 
 
-- `context/Containerfile` has been modifed after running `ansible-builder build`, there make a backup copy before running `ansible-build` command again.
-- The `context/pip.conf` is pointing PIP to another server hosting the Pypi repos.  A temporary one can be created using `pypi-mirror` https://pypi.org/project/python-pypi-mirror/
+- `context/Containerfile` has been modifed after running `ansible-builder build`, make a backup copy before running `ansible-build` command again.
+- The `context/pip.conf` is pointing PIP to another server hosting the Pypi repos. Update it with your local Pypi repo information. A temporary one can be created using `pypi-mirror` https://pypi.org/project/python-pypi-mirror/
 - To create the context directory, run `ansible-builder create`
 - To build a new image, run `podman build -f context/Containerfile -t disconnected_ee`
 
