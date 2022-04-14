@@ -12,15 +12,20 @@ WORKDIR /build
 FROM $EE_BUILDER_IMAGE as builder
 ADD _build/bindep.txt bindep.txt
 RUN ansible-builder introspect --sanitize --user-bindep=bindep.txt --write-bindep=/tmp/src/bindep.txt --write-pip=/tmp/src/requirements.txt
+# Remove the UBI repo from internet and point PIP to a local Pypi repo
 ADD pip.conf /etc/pip.conf
 RUN rm /etc/yum.repos.d/ubi.repo
+#
 RUN assemble
 
 FROM $EE_BASE_IMAGE
 USER root
+# Remove the UBI repo from internet and point PIP to a local Pypi repo
+# We also need to prepare with addition python module and rpms for installing the rest of the packages
 ADD pip.conf /etc/pip.conf
 RUN pip3 install setuptools-scm
 RUN rm /etc/yum.repos.d/ubi.repo && microdnf install -y gcc python38-devel libssh-devel
+#
 COPY --from=builder /output/ /output/
 RUN /output/install-from-bindep && rm -rf /output/wheels
 RUN update-crypto-policies --set DEFAULT:AD-SUPPORT && update-crypto-policies --show && microdnf remove gcc
