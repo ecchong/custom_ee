@@ -1,0 +1,24 @@
+---
+- name: Test Authenticate with Kerberos
+  hosts: all
+  gather_facts: no
+
+  pre_tasks:
+  - name: Kerberos Authentication
+    ansible.builtin.include_role:
+      name: kerberos_authentication
+
+  tasks:
+  - name: Gather facts
+    setup:
+
+  - name: Ping
+    ping:
+
+  - name: Run a command
+    shell: whoami
+
+  - name: Install packages
+    dnf:
+      name: tmux
+    become: true

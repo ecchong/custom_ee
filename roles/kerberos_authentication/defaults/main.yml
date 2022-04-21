@@ -1,0 +1,4 @@
+---
+kerberos_authentication_krb5_conf:  /etc/krb5.conf
+#_krb5_cache: /tmp/krb5cc_0
+kerberos_authentication_debug: true

@@ -1,0 +1,21 @@
+---
+- name: Authenticate with Kerberos
+  delegate_to: localhost
+  run_once: true
+  block:
+  - name: Prepare krb5.conf
+    ansible.builtin.copy:
+      dest: "{{ kerberos_authentication_krb5_conf }}"
+      src: krb5.conf
+      mode: 0600
+      backup: true
+
+  - name: Authenticate with Kerberos
+    ansible.builtin.command: "kinit -V {{ ansible_user }}"
+    args:
+      stdin: "{{ ansible_password }}"
+    no_log: true
+
+  - name: Debug - print Kerberos tickets
+    ansible.builtin.command: klist
+    when: kerberos_authentication_debug
