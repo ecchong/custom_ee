@@ -1,5 +1,8 @@
 # custom_ee
 
+**Update**
+My quota for Git Large File Storage is exceeded, but you can still find these images on registry.redhat.io
+
 This repo contains the builder image and base Ansible EE image for running ansible-builder in a disconnected environment.
 
 - ansible-builder-rhel8.tar.gz
@@ -19,7 +22,6 @@ The `disconnected_ee` directory contains necessary build files for disconnected 
 - The `context/pip.conf` is pointing PIP to another server hosting the Pypi repos. Update it with your local Pypi repo information. A temporary one can be created using `pypi-mirror` https://pypi.org/project/python-pypi-mirror/
 - To create the context directory, run `ansible-builder create`
 - To build a new image, run `podman build -f context/Containerfile -t disconnected_ee`
-
 
 ## Reference
 [https://cloudautomation.pharriso.co.uk/post/ansible-builder-disconnected/](https://cloudautomation.pharriso.co.uk/post/ansible-builder-disconnected/)
