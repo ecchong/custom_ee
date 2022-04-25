@@ -9,4 +9,3 @@ dependencies:
   python: py3_ansible29_requirements.txt
   galaxy: requirements.yml
   system: bindep.txt
-
