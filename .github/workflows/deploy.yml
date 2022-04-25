@@ -65,7 +65,7 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_PASSWORD }}
 
-      - name: DEBUG
+      - name: DEBUG - registry.redhat.io
         run: |
           echo ${{ secrets.REDHAT_USERNAME }}
 
