@@ -26,3 +26,10 @@ The `disconnected_ee` directory contains necessary build files for disconnected 
 ## Reference
 [https://cloudautomation.pharriso.co.uk/post/ansible-builder-disconnected/](https://cloudautomation.pharriso.co.uk/post/ansible-builder-disconnected/)
 
+# Automatic EE build
+
+Some Github actions to automatically build the EE.
+
+## Reference
+[https://github.com/cloin/ee-builds]Colin McNaughton's repo
+[https://www.youtube.com/watch?v=ZFu_T5j4GDo]Colin McNaughton's Youtube video
