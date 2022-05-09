@@ -25,6 +25,10 @@ on:
         description: 'this is the quay folder name that combine qith quay.io to form the url'
         required: true
         type: string
+      SKIP_COLLECTION:
+        description: 'boolean - true if the version of ansible does not support collection, i.e. 2.9'
+        required: false
+        type: boolean
     secrets:
       REDHAT_PASSWORD:
         description: 'needed for registry login'
