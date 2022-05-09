@@ -25,7 +25,7 @@ jobs:
       EE_FOLDER_NAME: 'py3_ansible29'
       EE_IMAGE_TAG: 'latest'
       QUAY_USER: 'echong+custom_ee'
-      QUAY_FOLDER: 'echong/custom_ee'
+      QUAY_FOLDER: 'echong'
     secrets:
       REDHAT_USERNAME: ${{ secrets.REDHAT_USERNAME }}
       REDHAT_PASSWORD: ${{ secrets.REDHAT_PASSWORD }}
