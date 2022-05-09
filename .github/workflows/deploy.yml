@@ -21,6 +21,10 @@ on:
         description: 'this is used during the image push to quay'
         required: true
         type: string
+      QUAY_FOLDER:
+        description: 'this is the quay folder name that combine qith quay.io to form the url'
+        required: true
+        type: string
     secrets:
       REDHAT_PASSWORD:
         description: 'needed for registry login'
@@ -90,7 +94,8 @@ jobs:
           image: ${{ inputs.EE_FOLDER_NAME }}
           tags: |
             ${{ inputs.EE_IMAGE_TAG }}
-          registry: quay.io/${{ inputs.QUAY_USER }}/
+          registry: quay.io/${{ inputs.QUAY_FOLDER }}/
+#          registry: quay.io/${{ inputs.QUAY_USER }}/
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_PASSWORD }} 
 
