@@ -65,10 +65,6 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_PASSWORD }}
 
-      - name: DEBUG - registry.redhat.io
-        run: |
-          echo ${{ secrets.REDHAT_USERNAME }}
-
       - name: Log in to registry.redhat.io
         id: registry-redhat
         uses: redhat-actions/podman-login@v1
