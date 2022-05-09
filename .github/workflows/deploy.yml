@@ -103,4 +103,6 @@ jobs:
         run: echo "Image pushed to ${{ steps.push-to-quay.outputs.registry-paths }}"
         
       - name: List installed collections
+        if: not ${{ inputs.SKIP_COLLECTION }}
         run: podman run ${{ inputs.EE_FOLDER_NAME }} ansible-galaxy collection list
+

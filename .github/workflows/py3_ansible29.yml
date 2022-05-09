@@ -26,6 +26,7 @@ jobs:
       EE_IMAGE_TAG: 'latest'
       QUAY_USER: 'echong+custom_ee'
       QUAY_FOLDER: 'echong'
+      SKIP_COLLECTION: true
     secrets:
       REDHAT_USERNAME: ${{ secrets.REDHAT_USERNAME }}
       REDHAT_PASSWORD: ${{ secrets.REDHAT_PASSWORD }}
