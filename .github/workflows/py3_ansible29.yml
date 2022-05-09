@@ -20,11 +20,11 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   call-deploy-workflow:
-    uses:  cloin/ee-builds/.github/workflows/deploy.yml@main
+    uses:  ecchong/custom_ee/.github/workflows/deploy.yml@main
     with:
       EE_FOLDER_NAME: 'py3_ansible29'
       EE_IMAGE_TAG: 'latest'
       QUAY_USER: 'echong+custom_ee'
     secrets:
-      REDHAT_USERNAME: ${{ secrets.QUAY_USERNAME }}
-      REDHAT_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
+      REDHAT_USERNAME: ${{ secrets.REDHAT_USERNAME }}
+      REDHAT_PASSWORD: ${{ secrets.REDHAT_PASSWORD }}
