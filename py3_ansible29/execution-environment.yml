@@ -1,6 +1,6 @@
 ---
-# Test
 version: 1
+# Test
 
 build_arg_defaults:
   EE_BASE_IMAGE: 'registry.redhat.io/ansible-automation-platform-21/ee-29-rhel8'
