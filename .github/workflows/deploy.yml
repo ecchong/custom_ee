@@ -54,7 +54,7 @@ jobs:
 
   # This workflow contains a single job called "build"
   build:
-    runs-on: ubuntu-latest
+    runs-on: rhel8:latest
     environment: deploy
     steps:
 
