@@ -8,5 +8,5 @@ build_arg_defaults:
 
 dependencies:
   python: requirements.txt
-#  galaxy: requirements.yml
+  galaxy: requirements.yml
 #  system: bindep.txt
